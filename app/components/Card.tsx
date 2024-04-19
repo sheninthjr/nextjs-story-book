@@ -5,6 +5,7 @@ interface CardProps {
   description: string;
   image: string;
   tags: string;
+  rounded: "md" | "lg" | "xl" | "3xl";
   onClick?: () => void;
   backgroundColor?: string;
   textColor?: string;
@@ -15,13 +16,14 @@ export const Card: React.FC<CardProps> = ({
   description,
   image,
   tags,
+  rounded,
   onClick,
   backgroundColor = "white",
   textColor = "black",
 }) => {
   return (
     <div
-      className="h-auto border rounded-lg overflow-hidden shadow-lg"
+      className={`h-auto border ${process.env.STORYBOOK ? `rounded-${rounded}` : "rounded-3xl"} overflow-hidden shadow-lg`}
       style={{
         backgroundColor: `${backgroundColor}`,
         width: "20%",
@@ -30,7 +32,7 @@ export const Card: React.FC<CardProps> = ({
     >
       <img src={image} alt={title} className="w-full h-40 object-cover" />
       <div className="p-4">
-        <h2 className="text-xl font-bold mb-2">{title}</h2>
+        <h2 className="text-5xl font-bold mb-2">{title}</h2>
         <p className="text-sm">{description}</p>
         <div className="flex flex-wrap mt-2">{tags}</div>
       </div>

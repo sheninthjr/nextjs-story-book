@@ -1,5 +1,6 @@
 import type { Preview } from "@storybook/react";
 import "../app/globals.css";
+import withAppRouterContext from "../app/provider/withAppRouterContext";
 
 const preview: Preview = {
   parameters: {
@@ -9,6 +10,7 @@ const preview: Preview = {
         date: /Date$/i,
       },
     },
+    ecorators: [withAppRouterContext],
   },
 };
 

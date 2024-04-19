@@ -1,6 +1,4 @@
-import type { StorybookConfig } from "@storybook/nextjs";
-
-const config: StorybookConfig = {
+const config = {
   stories: [
     "../stories/**/*.mdx",
     "../stories/**/*.stories.@(js|jsx|mjs|ts|tsx)",
@@ -11,7 +9,7 @@ const config: StorybookConfig = {
     "@storybook/addon-essentials",
     "@chromatic-com/storybook",
     "@storybook/addon-interactions",
-    "@storybook/addon-styling-webpack"
+    "@storybook/addon-controls",
   ],
   framework: {
     name: "@storybook/nextjs",

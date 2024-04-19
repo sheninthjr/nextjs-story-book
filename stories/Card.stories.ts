@@ -17,3 +17,10 @@ export const WhiteCard: Story = {
     title: "Docker",
   },
 };
+
+export const smallRounded: Story = {
+  args: {
+    title: "Docker",
+    rounded: "3xl",
+  },
+};
